@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <!--Tags here-->
+    <meta charset="UTF-8">
+    <link rel="icon" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*Fonts*/
+        @font-face {
+            font-family: Roboto;
+            src: url(/assets/fonts/Roboto-Regular.ttf);
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: Roboto;
+            src: url(/assets/fonts/Roboto-Bold.ttf);
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: Roboto;
+            src: url(/assets/fonts/Roboto-Light.ttf);
+            font-weight: 100;
+        }
+
+        @font-face {
+            font-family: Georgia;
+            src: url(/assets/fonts/Georgia-Regular.ttf);
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: Georgia;
+            src: url(/assets/fonts/Georgia-Italic.ttf);
+            font-style: italic;
+        }
+
+        /*Variables and global settings*/
+
+        :root {
+            font-family: Roboto;
+            --margin: 35px;
+            --maxwidth: 1500px;
+            --header-logo-height: 56px;
+            --bordercolor: #e8e8e8;
+            --darkgrey: #595959;
+            --lightgrey: #f2f2f2;
+            --darkblue: #173f73;
+            --midblue: #1f64bf;
+            --lightblue: #bdd9f2;
+        }
+
+        @media screen and (max-width: 450px) {
+            :root {
+                --margin: 20px;
+            }
+        }
+
+        .accentline {
+            background-color: var(--darkblue);
+            width: 4em;
+            height: .3em;
+        }
+
+        /*Screen dimensions*/
+
+        body {
+            min-height: 1vh;
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        .bodymaxwidth {
+            max-width: var(--maxwidth);
+            margin: 0 auto !important;
+        }
+
+        .bodyfullwidth {
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        /*Header*/
+        header {
+            margin-top: 20.4px;
+            width: 100%;
+        }
+
+        .header_top {
+            border-bottom: 2px solid var(--bordercolor);
+        }
+
+        .header_bottom {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            font-family: Roboto;
+            border-bottom: 2px solid var(--bordercolor);
+        }
+
+        .header_bottom_text {
+            width: 100%;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            line-height: 1.5em;
+        }
+
+        .header_content {
+            margin: 0 auto !important;
+            padding: 20px var(--margin);
+            max-width: var(--maxwidth);
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+        }
+
+        .header_logo {
+            height: var(--header-logo-height);
+        }
+
+        #header_inline_logo {
+            display: block;
+        }
+
+        #header_stacked_logo {
+            display: none;
+            margin-left: calc((var(--header-logo-height) / 376) * -23.4);
+        }
+
+        @media screen and (max-width: 600px) {
+            #header_inline_logo {
+                display: none;
+            }
+
+            #header_stacked_logo {
+                display: block;
+            }
+        }
+
+        #menu {
+            display: none;
+        }
+
+        /*Cookie bar*/
+        .cookiebar {
+            background-color: var(--lightgrey);
+            margin-bottom: 0px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .cookiebar p {
+            margin: 0 var(--margin);
+            padding: 3px 0px;
+            color: var(--darkgrey);
+            font-size: 12px;
+            font-family: Roboto;
+            text-align: center;
+        }
+
+        .cookiebar a {
+            color: var(--darkgrey);
+        }
+
+        /*Home landing page sub section*/
+        .home_landing_section {
+            width: calc(100% - (2* var(--margin)));
+            max-width: 1000px;
+            margin: var(--margin) auto !important;
+            display: block;
+            gap: 0px;
+            grid-template-columns: auto auto;
+            padding: var(--margin);
+            justify-items: center;
+            align-items: center;
+        }
+
+        .home_landing_section_text {
+            grid-column: 1/2;
+            text-align: center;
+            /*margin-bottom: 42.16px;*/
+        }
+
+        .home_landing_section_text a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .home_landing_section_text a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        .home_landing_section_img {
+            grid-column: 2/3;
+            max-height: 500px;
+            display: block;
+        }
+
+        .home_landing_section_font {
+            font-size: 48px;
+            font-weight: normal;
+            color: var(--midblue);
+            text-align: center;
+        }
+
+        .home_landing_section_logo {
+            height: 48px;
+        }
+
+        .home_landing_section_btn {
+            display: inline;
+            border-radius: 28px;
+            width: auto;
+            text-align: center;
+            font-family: Roboto;
+            color: white;
+            font-size: 24px;
+            background: var(--darkblue);
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+
+        .home_landing_section_btn:hover {
+            background: var(--darkblue);
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 800px) {
+            .home_landing_section_font {
+                font-size: 40px;
+            }
+
+            .home_landing_section_logo {
+                height: 40px;
+            }
+
+            /*.home_landing_section_text {
+                margin-bottom: 36.8px;
+            }*/
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .home_landing_section_img {
+                max-height: 400px;
+            }
+
+            .home_landing_section_font {
+                font-size: 32px;
+            }
+
+            .home_landing_section_logo {
+                height: 32px;
+            }
+
+            /*.home_landing_section_text {
+                margin-bottom: 21.44px;
+            }*/
+
+        }
+
+        @media screen and (max-width: 400px) {
+            .home_landing_section {
+                width: calc(100% - (2* var(--margin)));
+                gap: var(--margin);
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                padding: var(--margin);
+                justify-items: center;
+                align-items: center;
+            }
+
+            .home_landing_section_text {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            .home_landing_section_img {
+                display: none;
+            }
+
+        }
+
+        .home_landing_section_desc {
+            text-align: center;
+            font-size: 20px;
+            margin: calc(1em + 12px + 1em) 15px 5px 15px;
+        }
+
+        .home_landing_section_review_quote::before {
+            content: url(/assets/icons/quote_marks_bodoni.svg);
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        .home_landing_section_review_author {
+            text-align: center;
+            margin-top: 0px;
+            font-size: 15px;
+        }
+
+        /*home_tick_marks*/
+        .home_ticks_section {
+            background-color: var(--lightgrey);
+        }
+
+        .home_tick_marks {
+            width: calc(100% - (2* var(--margin)));
+            margin: 0 auto !important;
+            padding: 12px 0 12px 0;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .home_tick_marks_font {
+            margin: 0px;
+            text-align: center;
+            height: 20px;
+        }
+
+        /*home socials*/
+        .home_socials {
+            width: calc(100% - (2* var(--margin)));
+            margin: 0 auto var(--margin) auto !important;
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .home_socials_logo {
+            margin: 0;
+            text-align: center;
+            height: 22px;
+        }
+
+        .home_socials_logo_a {
+            margin: 0 0 0 10px;
+            text-decoration: none;
+        }
+
+        .home_socials_desc {
+            text-align: center;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    </style>
+    <!--Title and metadata here-->
+</head>
+
+<body>
+    <div class="cookiebar">
+        <p>This website uses cookies. To learn more, <a href="/notices/cookies/">click here</a></p>
+    </div>
+    <header>
+        <div class="header_top">
+            <div class="header_content">
+                <div class="header_logo">
+                    <img src="/assets/logos/briefly_macro_basic/bm_logo_inline_w_tagline.svg" width="auto" height="100%"
+                        alt="Briefly Macro Logo" id="header_inline_logo">
+                    <img src="/assets/logos/briefly_macro_basic/bm_logo_stacked_wo_tagline.svg" width="auto"
+                        height="100%" alt="Briefly Macro Logo" id="header_stacked_logo">
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <p class="header_bottom_text">
+                <span id="close"></span>
+                <span id="menu"></span>
+            </p>
+        </div>
+    </header>
+    <div class="bodymaxwidth">
+        <div class="home_landing_section">
+            <div class="home_landing_section_text">
+                <h1 class="home_landing_section_font">The</h1>
+                <img src="/assets/logos/briefly_macro_basic/bm_logo_inline_wo_tagline.svg"
+                    class="home_landing_section_logo">
+                <h1 class="home_landing_section_font" style="margin-bottom: calc(0.67em + 12px);">Macro Briefing</h1>
+                <div class="home_landing_section_btn">Coming Soon</div>
+                <p class="home_landing_section_desc">Daily macro insights delivered to your inbox in time for when you
+                    wake up.</p>
+            </div>
+        </div>
+    </div>
+    <!--<div class="bodymaxwidth">
+        <div class="home_socials">
+            <p class="home_socials_desc">Follow for the latest updates:</p>
+            <div>
+                <a href="#" class="home_socials_logo_a">
+                    <img src="/assets/icons/5296501_linkedin_network_linkedin logo_icon.svg" alt="LinkedIn link"
+                        class="home_socials_logo">
+                </a>
+                <a href="#" class="home_socials_logo_a">
+                    <img src="/assets/icons/5296516_tweet_twitter_twitter logo_icon.svg" alt="LinkedIn link"
+                        class="home_socials_logo">
+                </a>
+            </div>
+        </div>
+    </div>-->
+    <div class="bodyfullwidth">
+        <div class="home_ticks_section">
+            <div class="bodymaxwidth">
+                <div class="home_tick_marks">
+                    <img src="/assets/logos/briefly_macro_basic/bm_logo_inline_wo_tagline.svg" alt=""
+                        class="home_tick_marks_font">
+                    <img src="/assets/logos/briefly_macro_prof/bm_professional_inline.png" alt=""
+                        class="home_tick_marks_font">
+                    <img src="/assets/logos/briefly_macro_student/bm_student_inline.png" alt=""
+                        class="home_tick_marks_font">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
