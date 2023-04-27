@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXWJNC87B6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NXWJNC87B6');
+    </script>
+    <meta name="robots" content="noindex">
+    <title>Cookies • Briefly Macro</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*Fonts*/
+        @font-face {
+            font-family: Roboto;
+            src: url(/assets/fonts/Roboto-Regular.ttf);
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: Roboto;
+            src: url(/assets/fonts/Roboto-Bold.ttf);
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: Roboto;
+            src: url(/assets/fonts/Roboto-Light.ttf);
+            font-weight: 100;
+        }
+
+        @font-face {
+            font-family: Georgia;
+            src: url(/assets/fonts/Georgia-Regular.ttf);
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: Georgia;
+            src: url(/assets/fonts/Georgia-Italic.ttf);
+            font-style: italic;
+        }
+
+        /*Variables and global settings*/
+
+        :root {
+            font-family: Roboto;
+            --margin: 35px;
+            --maxwidth: 1500px;
+            --header-logo-height: 56px;
+            --bordercolor: #e8e8e8;
+            --darkgrey: #595959;
+            --lightgrey: #f2f2f2;
+            --darkblue: #173f73;
+            --midblue: #1f64bf;
+            --lightblue: #bdd9f2;
+        }
+
+        @media screen and (max-width: 450px) {
+            :root {
+                --margin: 20px;
+            }
+        }
+
+        .accentline {
+            background-color: var(--darkblue);
+            width: 4em;
+            height: .3em;
+        }
+
+        /*Screen dimensions*/
+
+        body {
+            min-height: 1vh;
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        .bodymaxwidth {
+            max-width: var(--maxwidth);
+            margin: 0 auto !important;
+        }
+
+        .bodyfullwidth {
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        /*Header*/
+        header {
+            margin-top: 20.4px;
+            width: 100%;
+        }
+
+        .header_top {
+            border-bottom: 2px solid var(--bordercolor);
+        }
+
+        .header_bottom {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            font-family: Roboto;
+            border-bottom: 2px solid var(--bordercolor);
+        }
+
+        .header_bottom_text {
+            width: 100%;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            line-height: 1.5em;
+        }
+
+        .header_content {
+            margin: 0 auto !important;
+            padding: 20px var(--margin);
+            max-width: var(--maxwidth);
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+        }
+
+        .header_logo {
+            height: var(--header-logo-height);
+        }
+
+        #header_inline_logo {
+            display: block;
+        }
+
+        #header_stacked_logo {
+            display: none;
+            margin-left: calc((var(--header-logo-height) / 376) * -23.4);
+        }
+
+        @media screen and (max-width: 600px) {
+            #header_inline_logo {
+                display: none;
+            }
+
+            #header_stacked_logo {
+                display: block;
+            }
+        }
+
+        #menu {
+            display: none;
+        }
+
+        /*Cookie bar*/
+        .cookiebar {
+            background-color: var(--lightgrey);
+            margin-bottom: 0px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .cookiebar p {
+            margin: 0 var(--margin);
+            padding: 3px 0px;
+            color: var(--darkgrey);
+            font-size: 12px;
+            font-family: Roboto;
+            text-align: center;
+        }
+
+        .cookiebar a {
+            color: var(--darkgrey);
+        }
+
+        /*Home landing page sub section*/
+        .home_landing_section {
+            width: calc(100% - (2* var(--margin)));
+            max-width: 1000px;
+            margin: var(--margin) auto !important;
+            display: block;
+            gap: 0px;
+            grid-template-columns: auto auto;
+            padding: var(--margin);
+            justify-items: center;
+            align-items: center;
+        }
+
+        .home_landing_section_text {
+            grid-column: 1/2;
+            text-align: center;
+            /*margin-bottom: 42.16px;*/
+        }
+
+        .home_landing_section_text a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .home_landing_section_text a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        .home_landing_section_img {
+            grid-column: 2/3;
+            max-height: 500px;
+            display: block;
+        }
+
+        .home_landing_section_font {
+            font-size: 48px;
+            font-weight: normal;
+            color: var(--midblue);
+            text-align: center;
+        }
+
+        .home_landing_section_logo {
+            height: 48px;
+        }
+
+        .home_landing_section_btn {
+            display: inline;
+            border-radius: 28px;
+            width: auto;
+            text-align: center;
+            font-family: Roboto;
+            color: white;
+            font-size: 24px;
+            background: var(--darkblue);
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+
+        .home_landing_section_btn:hover {
+            background: var(--darkblue);
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 800px) {
+            .home_landing_section_font {
+                font-size: 40px;
+            }
+
+            .home_landing_section_logo {
+                height: 40px;
+            }
+
+            /*.home_landing_section_text {
+                margin-bottom: 36.8px;
+            }*/
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .home_landing_section_img {
+                max-height: 400px;
+            }
+
+            .home_landing_section_font {
+                font-size: 32px;
+            }
+
+            .home_landing_section_logo {
+                height: 32px;
+            }
+
+            /*.home_landing_section_text {
+                margin-bottom: 21.44px;
+            }*/
+
+        }
+
+        @media screen and (max-width: 400px) {
+            .home_landing_section {
+                width: calc(100% - (2* var(--margin)));
+                gap: var(--margin);
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                padding: var(--margin);
+                justify-items: center;
+                align-items: center;
+            }
+
+            .home_landing_section_text {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            .home_landing_section_img {
+                display: none;
+            }
+
+        }
+
+        .home_landing_section_desc {
+            text-align: center;
+            font-size: 20px;
+            margin: calc(1em + 12px + 1em) 15px 5px 15px;
+        }
+
+        .home_landing_section_review_quote::before {
+            content: url(/assets/icons/quote_marks_bodoni.svg);
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        .home_landing_section_review_author {
+            text-align: center;
+            margin-top: 0px;
+            font-size: 15px;
+        }
+
+        /*home_tick_marks*/
+        .home_ticks_section {
+            background-color: var(--lightgrey);
+        }
+
+        .home_tick_marks {
+            width: calc(100% - (2* var(--margin)));
+            margin: 0 auto !important;
+            padding: 12px 0 12px 0;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .home_tick_marks_font {
+            margin: 0px;
+            text-align: center;
+            height: 20px;
+        }
+
+        /*home socials*/
+        .home_socials {
+            width: calc(100% - (2* var(--margin)));
+            margin: 0 auto var(--margin) auto !important;
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .home_socials_logo {
+            margin: 0;
+            text-align: center;
+            height: 22px;
+        }
+
+        .home_socials_logo_a {
+            margin: 0 0 0 10px;
+            text-decoration: none;
+        }
+
+        .home_socials_desc {
+            text-align: center;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        /*Blog info*/
+        .blog_main {
+            left: 0%;
+            margin-left: 25%;
+            margin-right: 25%;
+            line-height: 1.4em;
+
+        }
+
+        .blog_main a {
+            color: var(--midblue);
+        }
+
+        @media screen and (max-width: 1100px) {
+            .blog_main {
+                left: 0%;
+                margin-left: 16%;
+                margin-right: 16%;
+                margin-bottom: 70px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .blog_main {
+                left: 0%;
+                margin-left: var(--margin);
+                margin-right: var(--margin);
+            }
+        }
+
+        .blog_title {
+            margin-left: 12%;
+            margin-right: 12%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 800px) {
+            .blog_title {
+                text-align: center;
+                margin-left: var(--margin);
+                margin-right: var(--margin);
+            }
+        }
+
+        .blog_description {
+            text-align: center;
+        }
+
+        .blog_meta_data {
+            margin-top: 35px;
+            font-family: var(--midblue);
+            text-align: center;
+        }
+
+        .blog_type {
+            color: var(--accent);
+            margin-top: 35px;
+            margin-bottom: -10px;
+            font-family: var(--midblue);
+            text-align: center;
+        }
+
+        .cookietable {
+            padding: 0;
+            display: block;
+            overflow-x: scroll;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .cookietable,
+        .cookieth,
+        .cookietd {
+            border: 2px solid white;
+            border-collapse: collapse;
+        }
+
+        .cookieth,
+        .cookietd {
+            text-align: left;
+            background-color: var(--lightblue);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cookiebar">
+        <p>This website uses cookies. To learn more, <a href="/notices/cookies/">click here</a></p>
+    </div>
+    <header>
+        <div class="header_top">
+            <div class="header_content">
+                <div class="header_logo">
+                    <img src="/assets/logos/briefly_macro_basic/bm_logo_inline_w_tagline.svg" width="auto" height="100%"
+                        alt="Briefly Macro Logo" id="header_inline_logo">
+                    <img src="/assets/logos/briefly_macro_basic/bm_logo_stacked_wo_tagline.svg" width="auto"
+                        height="100%" alt="Briefly Macro Logo" id="header_stacked_logo">
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <p class="header_bottom_text">
+                <span id="close"></span>
+                <span id="menu"></span>
+            </p>
+        </div>
+    </header>
+    <div class="bodymaxwidth">
+        <h1 class="blog_title">Cookies</h1>
+        <p class="blog_meta_data">Last updated: Apr 27,2023</p>
+        <div class="blog_main">
+            <h3>
+                What Are Cookies?
+            </h3>
+            <p>
+                When we provide services, we want to make them easy, useful and reliable. Where services are delivered
+                on the internet, this sometimes involves placing small amounts of information on your device, for
+                example, your computer or mobile phone. These include small files known as cookies. They cannot be used
+                to identify you personally.
+            </p>
+            <p>
+                These pieces of information are used to improve services for you through, for example:
+            </p>
+            <ul>
+                <li>recognising that you may already have given a username and password so you don’t need to do it for
+                    every web page requested</li>
+                <li>measuring how many people are using services, so they can be made easier to use and there’s enough
+                    capacity to ensure they are fast</li>
+                <li>analysing anonymised data to help us understand how people interact with govt services so we can
+                    make them better</li>
+            </ul>
+            <h3>
+                How to Manage cookies
+            </h3>
+            <ul>
+                <li>
+                    Learn how to <a href="https://www.aboutcookies.org/">remove cookies set on
+                        your device</a>
+                </li>
+            </ul>
+            <p>There are two types of cookie you may encounter when using our website:</p>
+            <p>First party cookies: these are our own cookies, controlled by us and used to provide information about
+                usage of our site.</p>
+            <p>Third party cookies: these are cookies found in other companies’ internet tools which we are using to
+                enhance our site, for example Facebook or Twitter have their own cookies, which are controlled by them.
+            </p>
+
+            <table class="cookietable">
+                <tr>
+                    <th class="cookieth">Cookie Name</th>
+                    <th class="cookieth">Purpose</th>
+                    <th class="cookieth">Details</th>
+                    <th class="cookieth">Cookie Lifespan</th>
+                    <th class="cookieth">Domain</th>
+                </tr>
+                <tr>
+                    <td class="cookietd">_ga_wpid</td>
+                    <td class="cookietd">Analytics</td>
+                    <td class="cookietd">Google Analytics 360</td>
+                    <td class="cookietd">2 years</td>
+                    <td class="cookietd">.brieflymacro.com</td>
+                </tr>
+                <tr>
+                    <td class="cookietd">__gsas</td>
+                    <td class="cookietd">Advertising</td>
+                    <td class="cookietd">AdSense for Search</td>
+                    <td class="cookietd">3 months</td>
+                    <td class="cookietd">.brieflymacro.com</td>
+                </tr>
+                <tr>
+                    <td class="cookietd">_ga</td>
+                    <td class="cookietd">Analytics</td>
+                    <td class="cookietd">Google Analytics</td>
+                    <td class="cookietd">2 years</td>
+                    <td class="cookietd">.brieflymacro.com</td>
+                </tr>
+            </table>
+            <h3>
+                How to Control and Delete Cookies
+            </h3>
+            <p>We will not use cookies to collect personally identifiable information about you.</p>
+            <p>However, if you wish to restrict or block the cookies which are set by our website, or indeed any other
+                website, you can do this through your browser settings. The ‘Help’ function within your browser should
+                tell you how.</p>
+            <p>Alternatively, you may wish to visit <a href="https://www.aboutcookies.org/">www.aboutcookies.org</a>
+                which
+                contains comprehensive information on how to
+                do this on a wide variety of browsers. You will also find details on how to delete cookies from your
+                machine as well as more general information about cookies.</p>
+            <p>Please be aware that restricting cookies may impact on the functionality of our website.</p>
+            <p>If you wish to view your cookie code, just click on a cookie to open it. You’ll see a short string of
+                text and numbers. The numbers are your identification card, which can only be seen by the server that
+                gave you the cookie.</p>
+            <p>For information on how to do this on the browser of your mobile phone you will need to refer to your
+                handset manual.</p>
+            <p>To opt-out of third-parties collecting any data regarding your interaction on our website, please refer
+                to their websites for further information.</p>
+            <div class="accentline"></div>
+            <p><i>For more information, or any enquiries: <a href="mailto:newsletter@brieflymacro.com"
+                        class="colour_link">newsletter@brieflymacro.com</a></i></p>
+            </p>
+        </div>
+    </div>
+</body>
