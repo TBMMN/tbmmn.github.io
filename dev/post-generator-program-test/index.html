@@ -1,0 +1,60 @@
+<head>
+    <script src="/dev/post-generator-program-test/scripts/html2canvas.js"></script>
+    <link rel="stylesheet" href="/dev/post-generator-program-test/scripts/style.css">
+</head>
+
+<body>
+    <!--Convert script-->
+    <textarea id="textInput" rows="4" cols="50"></textarea>
+
+
+    <br>
+    <input type="submit" onclick="populate()">
+    <script>
+        function populate() {
+            var textInput = document.getElementById("textInput").value;
+            textInput = textInput.replace(/\n\r?/g, '<br />');
+            document.getElementById("textOutput").innerHTML = textInput;
+        }
+    </script>
+
+
+    <br>
+    <input list="sections" id="slide">
+    <datalist id="sections">
+        <option value="1-datacheck">
+        <option value="2-headlines1">
+        <option value="3-headlines2">
+        <option value="4-headlines3">
+        <option value="5-earnings1">
+        <option value="6-earnings2">
+        <option value="7-earnings3">
+        <option value="8-manda1">
+        <option value="9-manda2">
+        <option value="10-manda3">
+    </datalist>
+
+
+    <br>
+    <input type="button" value="Download PNG" id="btnConvert" style="margin-bottom: 10px;">
+
+
+    <br>
+    <input id="filename" placeholder="Specify a filename…" />
+
+
+    <br>
+    <button id="download">Download TXT</button>
+
+
+    <script src="/dev/post-generator-program-test/scripts/convert.js"></script>
+    <script src="/dev/post-generator-program-test/scripts/download-as-text.js"></script>
+
+
+    <!--Div holder-->
+    <div id="html-content-holder" class="html-content-holder">
+        <div class="background-grey">
+            <p id="textOutput"></p>
+        </div>
+    </div>
+</body>

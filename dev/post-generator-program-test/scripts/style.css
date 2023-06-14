@@ -1,0 +1,16 @@
+:root {
+    --background-blue: #beddfa;
+    --background-grey: #f2f2f2;
+    --background-white: white;
+}
+
+.html-content-holder {
+    height: 1000px;
+    width: 1000px;
+}
+
+.background-grey {
+    background-color: var(--background-grey);
+    width: 100%;
+    height: 100%;
+}
